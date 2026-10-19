@@ -1,0 +1,294 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Estatuto Geral dos Mantos Negros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Plano: página escura de documento oficial. Coluna de leitura central, índice fixo por títulos,
+   artigos numerados em grade (número à esquerda, texto à direita), busca no topo. */
+:root{
+  --ink:#09090b;
+  --panel:#111114;
+  --panel-2:#17171b;
+  --line:#2b2b31;
+  --silver:#d3d6dd;
+  --silver-dim:#8f939e;
+  --gold:#c9a24b;
+  --gold-hi:#ecd187;
+  --gold-lo:#7a5f26;
+  --f-display:'Cinzel','Trajan Pro',Georgia,serif;
+  --f-body:'Spectral',Georgia,'Times New Roman',serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{
+  margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 72px;
+  background:var(--ink);
+  color:var(--silver);
+  font-family:var(--f-body);
+  font-size:18px;
+  line-height:1.7;
+  background-image:radial-gradient(1100px 480px at 50% -140px,rgba(201,162,75,.12),transparent 70%);
+  background-repeat:no-repeat;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+.wrap{max-width:900px;margin:0 auto;min-width:0}
+a{color:var(--gold-hi)}
+button,input{font:inherit}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-dim)}
+.gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Cabeçalho */
+.masthead{padding-top:56px;padding-bottom:28px}
+.masthead h1{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(36px,8vw,68px);letter-spacing:.05em;line-height:1.05;
+  margin:12px 0 10px;text-wrap:balance;
+}
+.masthead .sub{font-family:var(--f-display);font-size:clamp(15px,2.4vw,19px);letter-spacing:.12em;color:var(--silver);margin:0 0 26px;text-transform:uppercase}
+.rule{height:1px;border:0;margin:0;background:linear-gradient(90deg,var(--gold),rgba(201,162,75,0))}
+.meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:20px;font-family:var(--f-mono);font-size:13px;color:var(--silver-dim)}
+.meta b{color:var(--gold-hi);font-weight:500}
+
+.quote{
+  border-left:2px solid var(--gold);padding:4px 0 4px 22px;margin:34px 0 0;
+  font-style:italic;font-size:clamp(19px,2.6vw,24px);line-height:1.5;color:var(--silver);max-width:44ch;
+}
+.quote small{display:block;margin-top:12px;font-family:var(--f-mono);font-size:12px;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-dim)}
+
+/* Índice fixo */
+.bar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:rgba(9,9,11,.95);backdrop-filter:blur(8px);
+  border-block:1px solid var(--line);
+  margin-inline:calc(max(16px,env(safe-area-inset-left,0px)) * -1) calc(max(16px,env(safe-area-inset-right,0px)) * -1);
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));
+}
+.bar-in{max-width:900px;margin:0 auto;padding-block:10px;display:grid;gap:10px;min-width:0}
+.search input{
+  width:100%;background:var(--panel);border:1px solid var(--line);color:var(--silver);
+  font-family:var(--f-body);font-size:16px;padding:9px 12px;border-radius:2px;
+}
+.search input::placeholder{color:var(--silver-dim)}
+.search input:focus{border-color:var(--gold);outline:none}
+.toc{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--gold-lo) transparent;padding-bottom:2px}
+.toc a{
+  flex:0 0 auto;text-decoration:none;color:var(--silver-dim);
+  font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;
+  border:1px solid var(--line);padding:5px 10px;white-space:nowrap;
+}
+.toc a:hover{color:var(--gold-hi);border-color:var(--gold-lo)}
+.count{font-family:var(--f-mono);font-size:12px;color:var(--silver-dim);min-height:1em}
+
+main{padding-top:24px}
+
+/* Títulos */
+section.titulo{margin-top:52px;scroll-margin-top:150px}
+.titulo-h{display:grid;gap:6px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.titulo-h .num{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.titulo-h h2{
+  margin:0;font-family:var(--f-display);font-weight:600;font-size:clamp(22px,4vw,30px);
+  letter-spacing:.05em;line-height:1.2;text-wrap:balance;color:var(--silver);
+}
+
+/* Artigos: número em coluna própria, texto à direita */
+article.art{
+  display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 24px;
+  padding-block:22px;border-bottom:1px solid rgba(43,43,49,.7);
+}
+article.art.hit{background:rgba(201,162,75,.06);box-shadow:inset 2px 0 0 var(--gold)}
+.art-n{font-family:var(--f-mono);font-size:13px;color:var(--gold);letter-spacing:.04em;padding-top:4px;white-space:nowrap}
+.art-t{font-family:var(--f-display);font-size:17px;letter-spacing:.04em;color:var(--silver);margin:0 0 10px;line-height:1.3;text-wrap:balance}
+.art-b{min-width:0;max-width:66ch}
+.art-b p{margin:0 0 10px}
+.art-b ol{margin:4px 0 12px;padding-left:26px}
+.art-b li{margin-bottom:6px;padding-left:4px}
+.art-b li::marker{color:var(--gold);font-family:var(--f-mono);font-size:14px}
+.par{font-style:italic;color:var(--silver-dim)}
+
+@media(max-width:620px){
+  article.art{grid-template-columns:1fr;gap:4px}
+  .art-n{padding-top:0}
+  .art-t{margin-bottom:8px}
+}
+
+/* Abertura e disposição final */
+.preamble{margin-top:44px}
+.preamble h2,.closing h2{font-family:var(--f-display);font-weight:600;font-size:22px;letter-spacing:.08em;color:var(--gold);margin:0 0 14px;text-transform:uppercase}
+.preamble p,.closing p{margin:0 0 14px;max-width:66ch}
+.closing{margin-top:56px;padding:28px 26px;background:var(--panel);border:1px solid var(--line);border-top:1px solid var(--gold)}
+.closing .last{margin-top:22px;color:var(--gold-hi);font-family:var(--f-display);letter-spacing:.06em}
+.closing .motto{margin:18px 0 0;font-style:italic;color:var(--silver-dim)}
+
+footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--silver-dim)}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">Sob a autoridade de Utred Root</div>
+    <h1 class="gold">Estatuto Geral</h1>
+    <p class="sub">Ordem dos Mantos Negros · Carta de Autoridade, Honra, Hierarquia e Dever</p>
+    <hr class="rule">
+    <div class="meta">
+      <span><b>10</b> títulos</span>
+      <span><b>41</b> artigos</span>
+      <span>Ordem Neskus</span>
+    </div>
+    <blockquote class="quote">Um manto não faz um homem honrado. São seus juramentos, seus atos e sua lealdade que lhe concedem valor.<small>Epígrafe</small></blockquote>
+  </header>
+
+  <nav class="bar" aria-label="Índice e busca">
+    <div class="bar-in">
+      <div class="search"><input id="q" type="search" placeholder="Buscar em todos os artigos" aria-label="Buscar em todos os artigos" autocomplete="off"></div>
+      <div class="toc" id="toc"></div>
+      <div class="count" id="count" aria-live="polite"></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="preamble" aria-labelledby="pre">
+      <h2 id="pre">Preâmbulo</h2>
+      <p>Em nome da Ordem Neskus, sob cujos estandartes se reúnem os Mantos Negros, estabelece-se o presente Estatuto, destinado a reger a conduta, a hierarquia, os deveres, os direitos e a disciplina de todos aqueles que integrem suas fileiras.</p>
+      <p>Os Mantos Negros não serão definidos apenas pelo aço que empunham, pelas vestes que carregam ou pelas palavras que pronunciam, mas pela firmeza de seus juramentos, pela ordem de suas fileiras e pela responsabilidade de cada homem perante seus irmãos.</p>
+      <p>Não havendo, até o presente momento, Casa nobre à qual os Mantos Negros estejam formalmente vinculados, a Ordem conservará sua identidade e organização próprias, sem assumir vassalagem a qualquer senhor por mera conveniência, promessa informal ou decisão individual.</p>
+      <p>Fica, portanto, promulgado o presente Estatuto como fundamento da organização interna dos Mantos Negros.</p>
+    </section>
+
+    <div id="corpo"></div>
+
+    <section class="closing" aria-labelledby="sol">
+      <h2 id="sol">Disposição solene</h2>
+      <p>Que todo homem que vista o Manto Negro conheça a responsabilidade que assume. Que nenhum cargo seja maior que o dever, que nenhuma promessa seja feita sem consciência de suas consequências e que nenhum integrante confunda a honra da Ordem com a ambição de um indivíduo.</p>
+      <p>Os Mantos Negros permanecem sob a Ordem Neskus, sem Casa nobre própria ou suserano oficialmente reconhecido, até que seu destino político seja estabelecido pelas autoridades competentes.</p>
+      <p class="last">Promulgado sob a autoridade de Utred Root, Senhor e Comandante dos Mantos Negros.</p>
+      <p class="motto">Pelo juramento, a Ordem permanece. Pela disciplina, seus membros se mantêm unidos. Pela honra, seu nome será preservado.</p>
+    </section>
+
+    <footer>Estatuto Geral · Ordem Neskus · Documento institucional do RP</footer>
+  </main>
+</div>
+
+<script>
+const TITULOS=[
+{num:'I',nome:'Da identidade e da natureza da ordem',arts:[
+ {n:'I',t:'Da denominação',b:['A organização será oficialmente reconhecida como Mantos Negros, constituindo um corpo organizado pertencente à Ordem Neskus.']},
+ {n:'II',t:'Da identidade institucional',b:['Os Mantos Negros conservarão seus próprios símbolos, costumes, hierarquia, regulamentos internos e tradições, observadas as obrigações decorrentes de sua vinculação à Ordem Neskus.']},
+ {n:'III',t:'Da condição perante as Casas Nobres',b:['Os Mantos Negros não possuem, atualmente, Casa nobre própria nem Casa suserana oficialmente reconhecida.','§ 1º. A ausência de uma Casa não constitui desonra ou inferioridade institucional.','§ 2º. Nenhuma Casa poderá ser considerada senhora dos Mantos Negros sem que exista compromisso formal reconhecido pelas autoridades competentes.','§ 3º. Relações diplomáticas, acordos temporários, contratos de serviço ou alianças militares não implicam automaticamente vassalagem.']},
+ {n:'IV',t:'Dos princípios fundamentais',b:['A conduta dos integrantes será orientada por:',{ol:['Lealdade à Ordem e à liderança legítima.','Disciplina no exercício das funções.','Honra no cumprimento dos juramentos.','Coragem diante dos deveres assumidos.','Respeito à hierarquia.','Prudência na guerra e nas negociações.','Responsabilidade pelas próprias decisões.','Preservação dos interesses e da integridade dos Mantos Negros.']}]}
+]},
+{num:'II',nome:'Da autoridade suprema',arts:[
+ {n:'V',t:'Do Senhor dos Mantos Negros',b:['Utred Root é reconhecido como Senhor e Comandante dos Mantos Negros, exercendo a autoridade máxima sobre sua administração interna, organização militar e representação institucional, dentro dos limites das obrigações da Ordem Neskus.']},
+ {n:'VI',t:'Das prerrogativas do Senhor',b:['Compete ao Senhor dos Mantos Negros:',{ol:['Nomear, confirmar, suspender ou destituir conselheiros e oficiais.','Convocar reuniões extraordinárias do Conselho.','Aprovar regulamentos, decretos e ordens internas.','Autorizar operações militares e mobilizações da organização, conforme as regras do RP.','Determinar a abertura de investigações disciplinares.','Aplicar ou autorizar penalidades nos termos deste Estatuto.','Conduzir ou autorizar negociações com Casas nobres e outras organizações.','Reconhecer novos membros e confirmar promoções.','Definir a orientação política e militar dos Mantos Negros.','Submeter propostas de alianças permanentes ou de vinculação a uma Casa às autoridades competentes.']}]},
+ {n:'VII',t:'Dos limites da autoridade',b:['A autoridade do Senhor será exercida em conformidade com os compromissos institucionais da Ordem Neskus e com as regras do ambiente de interpretação.','Parágrafo único. Nenhuma disposição deste Estatuto poderá ser utilizada para reivindicar poderes sobre jogadores, organizações ou Casas que não estejam subordinados aos Mantos Negros no RP.']}
+]},
+{num:'III',nome:'Do Conselho dos Mantos Negros',arts:[
+ {n:'VIII',t:'Da composição',b:['O Conselho será composto por quatro conselheiros, nomeados ou reconhecidos pelo Senhor dos Mantos Negros.',{ol:['Conselheiro-Mor.','Conselheiro Militar.','Conselheiro Diplomático.','Conselheiro de Inteligência.']}]},
+ {n:'IX',t:'Da finalidade do Conselho',b:['O Conselho terá por finalidade auxiliar o Senhor na administração da organização, examinar assuntos relevantes, apresentar recomendações, manter registros e coordenar as áreas que lhe forem atribuídas.']},
+ {n:'X',t:'Do Conselheiro-Mor',b:['Compete ao Conselheiro-Mor:',{ol:['Coordenar as atividades administrativas do Conselho.','Organizar reuniões e pautas.','Registrar decisões e encaminhamentos.','Acompanhar o cumprimento das determinações aprovadas.','Apresentar ao Senhor os assuntos que exijam decisão superior.']},'Parágrafo único. O título de Conselheiro-Mor não concede, por si só, autoridade suprema nem precedência absoluta sobre as competências específicas dos demais conselheiros.']},
+ {n:'XI',t:'Do Conselheiro Militar',b:['Compete ao Conselheiro Militar:',{ol:['Organizar e supervisionar a preparação das forças.','Recomendar planos de defesa, formação e campanha.','Acompanhar treinamentos e disciplina.','Elaborar relatórios sobre efetivos e disponibilidade militar.','Coordenar os oficiais e comandantes que lhe forem subordinados.','Comunicar ao Senhor as necessidades e deficiências da força.']},'Parágrafo único. A autorização para iniciar uma campanha ou assumir compromissos militares de grande relevância permanecerá com a autoridade competente.']},
+ {n:'XII',t:'Do Conselheiro Diplomático',b:['Compete ao Conselheiro Diplomático:',{ol:['Manter registros das relações externas.','Preparar propostas de tratados, alianças e acordos.','Representar os Mantos Negros quando devidamente autorizado.','Registrar promessas, obrigações e compromissos assumidos.','Avaliar riscos políticos e consequências diplomáticas.','Informar ao Senhor sobre mudanças relevantes nas relações com outras Casas e organizações.']},'Parágrafo único. Nenhum acordo definitivo de vassalagem poderá ser firmado unilateralmente pelo Conselheiro Diplomático.']},
+ {n:'XIII',t:'Do Conselheiro de Inteligência',b:['Compete ao Conselheiro de Inteligência:',{ol:['Reunir e organizar informações relevantes para a liderança.','Preparar relatórios sobre ameaças e acontecimentos políticos ou militares.','Avaliar a confiabilidade das informações recebidas.','Manter arquivos reservados, com acesso restrito.','Comunicar informações importantes ao Senhor.','Distinguir fatos confirmados de rumores, suspeitas e alegações não verificadas.']},'Parágrafo único. A função não autoriza a violação de regras do jogo, o acesso indevido a contas ou a utilização de informações obtidas fora dos meios permitidos pelo RP.']},
+ {n:'XIV',t:'Do quarto conselheiro',b:['O quarto conselheiro exercerá as atribuições que lhe forem formalmente confiadas pelo Senhor, com competências registradas para evitar conflitos de autoridade.']},
+ {n:'XV',t:'Das deliberações',b:['As decisões do Conselho serão registradas e encaminhadas ao Senhor.','§ 1º. O Conselho poderá deliberar por maioria simples dos conselheiros em exercício, quando houver quórum de três membros.','§ 2º. A ausência de quórum não impedirá a apresentação de recomendações individuais.','§ 3º. As deliberações consultivas não terão força de ordem suprema sem a aprovação exigida pela natureza do assunto.','§ 4º. O Senhor poderá solicitar nova análise de uma proposta ou decidir de modo diferente da recomendação do Conselho, registrando sua determinação quando o assunto for relevante.']}
+]},
+{num:'IV',nome:'Da hierarquia e do serviço',arts:[
+ {n:'XVI',t:'Da cadeia de autoridade',b:['A hierarquia ordinária dos Mantos Negros será organizada da seguinte forma:',{ol:['Senhor e Comandante dos Mantos Negros.','Conselho dos Mantos Negros.','Oficiais e comandantes designados.','Membros efetivos.','Recrutas em período de integração.']},'Parágrafo único. A precedência funcional dos conselheiros e dos oficiais será determinada pelas competências de cada cargo, pelas ordens vigentes e pelas designações do Senhor.']},
+ {n:'XVII',t:'Do dever de obediência',b:['Todo integrante deverá cumprir as ordens legítimas de seus superiores no âmbito de suas atribuições.','§ 1º. Ordens contraditórias deverão ser comunicadas à autoridade competente para esclarecimento.','§ 2º. A obediência hierárquica não dispensa o respeito às regras do RP nem torna legítima uma conduta proibida por elas.']},
+ {n:'XVIII',t:'Dos oficiais',b:['Os oficiais deverão orientar seus subordinados, comunicar irregularidades, manter a disciplina e transmitir fielmente as ordens recebidas.']},
+ {n:'XIX',t:'Dos membros efetivos',b:['Todo membro efetivo deverá participar das atividades para as quais se comprometeu, respeitar a hierarquia, preservar os assuntos reservados e zelar pelo nome da organização.']},
+ {n:'XX',t:'Dos recrutas',b:['Os recrutas estarão sujeitos a um período de integração, durante o qual deverão conhecer o Estatuto, demonstrar respeito às regras e prestar o juramento correspondente.','A confirmação como membro efetivo dependerá da avaliação da autoridade designada.']}
+]},
+{num:'V',nome:'Do juramento e da honra',arts:[
+ {n:'XXI',t:'Do juramento de ingresso',b:['Nenhum recruta será formalmente reconhecido como membro efetivo sem cumprir o juramento estabelecido para sua categoria, salvo dispensa expressamente concedida pela autoridade competente.']},
+ {n:'XXII',t:'Do juramento dos conselheiros',b:['Os conselheiros prestarão juramento específico, comprometendo-se a exercer suas funções com prudência, discrição, fidelidade e respeito aos limites de sua autoridade.']},
+ {n:'XXIII',t:'Do juramento dos oficiais',b:['Os oficiais comprometer-se-ão a preservar a disciplina, cumprir as ordens legítimas, orientar seus subordinados e responder pelos atos praticados no exercício do comando.']},
+ {n:'XXIV',t:'Da quebra do juramento',b:['A quebra deliberada de um juramento poderá constituir infração grave, devendo ser examinada conforme as circunstâncias, as provas e a gravidade do ato.','Parágrafo único. Divergências, pedidos de afastamento ou renúncias formalizadas não constituem, isoladamente, traição.']}
+]},
+{num:'VI',nome:'Da disciplina e da justiça interna',arts:[
+ {n:'XXV',t:'Das infrações',b:['Constituem infrações disciplinares, conforme sua gravidade:',{ol:['Desrespeito grave à hierarquia.','Abuso das prerrogativas de um cargo.','Falsificação deliberada de relatórios ou documentos oficiais.','Divulgação não autorizada de informações reservadas.','Descumprimento deliberado de compromissos assumidos.','Uso do nome dos Mantos Negros para obter vantagens sem autorização.','Sabotagem intencional das atividades da organização.','Abandono injustificado de funções essenciais.','Apropriação indevida de recursos pertencentes à organização.']}]},
+ {n:'XXVI',t:'Das penalidades',b:['Poderão ser aplicadas, conforme o caso:',{ol:['Advertência verbal.','Advertência formal registrada.','Suspensão temporária de funções.','Perda de privilégios ou atribuições.','Destituição do cargo.','Suspensão temporária da condição de membro.','Expulsão da organização.']}]},
+ {n:'XXVII',t:'Do procedimento disciplinar',b:['Antes da aplicação de penalidade grave, o acusado deverá, sempre que viável, ser informado da acusação e ter oportunidade de apresentar sua versão dos fatos.','A decisão deverá considerar as provas disponíveis, a gravidade da infração, a reincidência e os danos causados à organização.']},
+ {n:'XXVIII',t:'Da autoridade julgadora',b:['Compete ao Senhor decidir sobre infrações graves e penalidades que envolvam destituição de conselheiros, oficiais superiores ou expulsão definitiva.','O Senhor poderá designar responsáveis pela apuração, sem transferir automaticamente sua autoridade final.']}
+]},
+{num:'VII',nome:'Da diplomacia e da condição perante as Casas',arts:[
+ {n:'XXIX',t:'Da independência perante as Casas',b:['Enquanto não houver vinculação formal reconhecida, os Mantos Negros não deverão ser apresentados como vassalos, soldados permanentes ou membros de qualquer Casa nobre.']},
+ {n:'XXX',t:'Das relações diplomáticas',b:['Os Mantos Negros poderão negociar com Casas, senhores, companhias e demais organizações, desde que seus representantes atuem dentro da autoridade recebida.']},
+ {n:'XXXI',t:'Dos acordos temporários',b:['A prestação de serviços, a participação em campanhas conjuntas ou a celebração de pactos temporários não implicarão submissão permanente, salvo disposição expressa e válida em contrário.']},
+ {n:'XXXII',t:'Da eventual vinculação a uma Casa',b:['Uma proposta de vassalagem ou vinculação permanente deverá ser examinada pelo Senhor, precedida de consulta ao Conselho quando conveniente e submetida às autoridades competentes da Ordem Neskus, conforme as regras aplicáveis.','A proposta deverá esclarecer, sempre que possível:',{ol:['As obrigações militares.','As condições de autonomia interna.','Os direitos e deveres de cada parte.','A duração e as condições de término do compromisso.','A posição dos Mantos Negros dentro da estrutura política acordada.']}]}
+]},
+{num:'VIII',nome:'Dos registros e dos assuntos reservados',arts:[
+ {n:'XXXIII',t:'Dos documentos oficiais',b:['Serão considerados documentos oficiais os estatutos, decretos, juramentos, registros de membros, atas do Conselho, relatórios e acordos formalmente reconhecidos.']},
+ {n:'XXXIV',t:'Da guarda dos registros',b:['Os documentos deverão ser mantidos em canais apropriados do Discord, com acesso compatível com sua natureza e com as permissões estabelecidas pela liderança.']},
+ {n:'XXXV',t:'Dos assuntos reservados',b:['Os assuntos do Conselho, os relatórios confidenciais e as negociações não públicas deverão ser acessíveis apenas aos integrantes autorizados.','A classificação de um assunto como reservado não poderá ser utilizada para ocultar abusos de autoridade ou impedir uma apuração legítima.']}
+]},
+{num:'IX',nome:'Da sucessão e da vacância de cargos',arts:[
+ {n:'XXXVI',t:'Da vacância dos cargos',b:['A renúncia, o afastamento, a inatividade ou a destituição de um conselheiro ou oficial permitirá ao Senhor nomear um substituto.']},
+ {n:'XXXVII',t:'Da ausência do Senhor',b:['Na ausência temporária de Utred Root, exercerá a autoridade operacional o substituto previamente designado.','Na inexistência de designação, os conselheiros deverão preservar a continuidade administrativa e encaminhar decisões extraordinárias à autoridade competente da Ordem Neskus, sem reivindicar individualmente o comando supremo.']},
+ {n:'XXXVIII',t:'Da sucessão definitiva',b:['A sucessão definitiva da liderança deverá respeitar as determinações válidas da Ordem Neskus e os procedimentos reconhecidos pelas autoridades competentes.','Nenhum membro poderá declarar-se sucessor legítimo apenas por antiguidade, popularidade ou força militar.']}
+]},
+{num:'X',nome:'Das disposições finais',arts:[
+ {n:'XXXIX',t:'Da interpretação',b:['As disposições deste Estatuto deverão ser interpretadas de modo a preservar a organização, a coerência hierárquica, a disciplina e os compromissos dos Mantos Negros.']},
+ {n:'XL',t:'Das alterações',b:['O presente Estatuto poderá ser alterado por determinação do Senhor, observadas as obrigações institucionais da Ordem Neskus e os procedimentos aplicáveis.','Alterações relevantes deverão ser registradas e comunicadas aos integrantes.']},
+ {n:'XLI',t:'Da vigência',b:['Este Estatuto entrará em vigor após sua aprovação pela liderança competente e permanecerá válido até sua revisão, substituição ou revogação formal.']}
+]}
+];
+
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+
+/* Renderização a partir dos dados */
+const corpo=document.getElementById('corpo');
+const toc=document.getElementById('toc');
+let html='',tocHtml='';
+TITULOS.forEach(t=>{
+  const id='titulo-'+t.num.toLowerCase();
+  tocHtml+='<a href="#'+id+'">Título '+t.num+'</a>';
+  html+='<section class="titulo" id="'+id+'" aria-labelledby="'+id+'-h"><header class="titulo-h"><span class="num">Título '+t.num+'</span><h2 id="'+id+'-h">'+esc(t.nome)+'</h2></header>';
+  t.arts.forEach(a=>{
+    let body='';
+    a.b.forEach(blk=>{
+      if(typeof blk==='string'){
+        const cls=/^Parágrafo único|^§/.test(blk)?'':'';
+        body+='<p>'+esc(blk)+'</p>';
+      }else if(blk.ol){
+        body+='<ol type="I" style="list-style-type:upper-roman">'+blk.ol.map(i=>'<li>'+esc(i)+'</li>').join('')+'</ol>';
+      }
+    });
+    html+='<article class="art" id="art-'+a.n.toLowerCase()+'" data-s="'+esc(norm(a.t+' '+a.b.map(x=>typeof x==='string'?x:x.ol.join(' ')).join(' ')))+'"><div class="art-n">Art. '+a.n+'.º</div><div><h3 class="art-t">'+esc(a.t)+'</h3><div class="art-b">'+body+'</div></div></article>';
+  });
+  html+='</section>';
+});
+corpo.innerHTML=html;
+toc.innerHTML=tocHtml;
+
+/* Busca */
+const q=document.getElementById('q');
+const count=document.getElementById('count');
+const arts=[...document.querySelectorAll('article.art')];
+const titulos=[...document.querySelectorAll('section.titulo')];
+q.addEventListener('input',()=>{
+  const t=norm(q.value.trim());
+  arts.forEach(a=>{
+    a.classList.remove('hit');
+    const hit=t.length<2||a.dataset.s.includes(t);
+    a.hidden=!hit;
+    if(t.length>=2&&hit)a.classList.add('hit');
+  });
+  titulos.forEach(s=>{s.hidden=[...s.querySelectorAll('article')].every(a=>a.hidden)});
+  if(t.length<2){count.textContent='';return}
+  const n=arts.filter(a=>!a.hidden).length;
+  count.textContent=n+(n===1?' artigo encontrado':' artigos encontrados');
+});
+</script>
+
+</body></html>
